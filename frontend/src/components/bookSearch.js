@@ -10,12 +10,17 @@ export default class BookSearch extends Component {
             title : ''
         }
         this.changeHandler = this.changeHandler.bind(this);
+        this.submitSearch = this.submitSearch.bind(this);
     }
 
     changeHandler = (event) => {
         let nam = event.target.name;
         let val = event.target.value;
         this.setState({[nam]: val});
+    }
+
+    submitSearch = () => {
+        console.log(this.state.author + "   " + this.state.title)
     }
 
     render(){
@@ -37,7 +42,7 @@ export default class BookSearch extends Component {
                         value={this.state.title}
                         onChange={this.changeHandler}/>
                 </div>
-                
+                <input type="submit" onClick={this.submitSearch}/>
             </div>
         );
     }
