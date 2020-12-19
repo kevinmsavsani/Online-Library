@@ -1,4 +1,5 @@
 import React , {Component} from 'react';
+import { getBookList } from '../services/apiWrapper';
 import './bookSearch.css';
 
 export default class BookSearch extends Component {
@@ -20,7 +21,9 @@ export default class BookSearch extends Component {
     }
 
     submitSearch = () => {
-        console.log(this.state.author + "   " + this.state.title)
+        console.log(this.state.author + "   " + this.state.title);
+        
+        console.log(getBookList(this.state.author,this.state.title));
     }
 
     render(){
