@@ -1,6 +1,6 @@
 import React , {Component} from 'react';
-import { getBookList } from './../api/data';
 import './bookSearch.css';
+import getData from '../services/apiWrapper';
 
 export default class BookSearch extends Component {
 
@@ -21,9 +21,17 @@ export default class BookSearch extends Component {
         this.setState({[nam]: val});
     }
 
+    getBookList(names,title) {
+        let Url = 'http://localhost:5000/booklist?';
+        Url += `names=${names}&title=${title}`;
+        getData("GET",Url,{}).then((data) => { 
+            this.setState(this.notifySearchResult(data.items));
+        });
+    }
+    
+
     submitSearch = () => {
-        console.log(this.state.author + "   " + this.state.title);
-        this.setState(this.notifySearchResult(getBookList(this.state.author,this.state.title)));
+        this.getBookList(this.state.author,this.state.title);
     }
 
     render(){

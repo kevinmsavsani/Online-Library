@@ -7,7 +7,6 @@ export default class BooksList extends Component {
     }
 
     render(){
-        console.log(this.props.books);
         return (
             <div className='book-list'>
                 {
@@ -16,7 +15,7 @@ export default class BooksList extends Component {
                                         book.volumeInfo.authors.join(', ') : 'UnKnown Author';
                         return (
                             <div className={'book-item'}>
-                            <span>{`Title: ${book.volumeInfo.title}`}</span>
+                                <span>{`Title: ${book.volumeInfo.title}`}</span>
                                 <span>{`Author: ${authors} `}</span>
                             </div>
                         )

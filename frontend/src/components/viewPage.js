@@ -12,9 +12,14 @@ class ViewPage extends Component {
         
     }
 
-    notifyBooksList(data){
+    notifyBooksList(books){
+        if(books) {
+			books.sort( (first, second) => {
+				return (new Date(first.volumeInfo.publishedDate) > new Date(second.volumeInfo.publishedDate));
+			})
+        }
         this.setState({
-            books: data
+            books: books
         })
     }
 
