@@ -1,10 +1,10 @@
 import './App.css';
-import BookSearch from './components/bookSearch'
+import ViewPage from './components/viewPage';
 
 function App() {
   return (
     <div className="App">
-      <BookSearch />
+      <ViewPage />
     </div>
   );
 }
