@@ -1,4 +1,5 @@
 import React , {Component} from 'react';
+import './bookSearch.css';
 
 export default class BookSearch extends Component {
 
@@ -20,17 +21,23 @@ export default class BookSearch extends Component {
     render(){
         return (
             <div className="form">
-                <input 
-                    name="author"
-                    type="text"
-                    value={this.state.author}
-                    onChange={this.changeHandler}/>
-                <input 
-                    name="title"
-                    type="text"
-                    value={this.state.title}
-                    onChange={this.changeHandler}/>
-
+                <div className="form-section">
+                    <label>Enter Author name:</label>
+                    <input 
+                        name="author"
+                        type="text"
+                        value={this.state.author}
+                        onChange={this.changeHandler}/>
+                </div>
+                <div className="form-section">
+                    <label>Enter Title:</label>
+                    <input 
+                        name="title"
+                        type="text"
+                        value={this.state.title}
+                        onChange={this.changeHandler}/>
+                </div>
+                
             </div>
         );
     }
