@@ -1,0 +1,27 @@
+
+.books-list {
+	height: auto;
+	max-height: 500px;
+	width: 80%;
+	border: 1px grey solid;
+	overflow: scroll;
+	margin-left: 10%;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.book-item {
+    height: 70px;
+    width: 60%;
+    border: 1px rgb(6, 6, 56) solid;
+    border-radius: 4px;
+    background-color: lightgrey;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.book-item > span {
+   display: block;
+   margin-left: 10px;
+   margin-top: 5px;
+}
