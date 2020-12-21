@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './booksList.css';
+import {Link} from "react-router-dom";
 
 export default class BooksList extends Component {
     constructor(props){
@@ -15,8 +16,10 @@ export default class BooksList extends Component {
                                         book.volumeInfo.authors.join(', ') : 'UnKnown Author';
                         return (
                             <div className={'book-item'}>
+                                <Link to={"/book/"+book.id}>
                                 <span>{`Title: ${book.volumeInfo.title}`}</span>
                                 <span>{`Author: ${authors} `}</span>
+                                </Link> 
                             </div>
                         )
                     })

@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 
 import './App.css';
+import BookDetail from "./components/bookDetail";
 import Home from "./components/home";
 import Sidebar from "./components/sideBar";
 import ViewPage from './components/viewPage';
@@ -20,6 +21,7 @@ function App() {
           <Route path="/search">
             <ViewPage />
           </Route>
+          <Route path="/book/:id" component={BookDetail} />
           <Route path="/">
             <Home />
           </Route>
