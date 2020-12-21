@@ -18,13 +18,9 @@ function App() {
         <Sidebar />
         <div className='content'>
         <Switch>
-          <Route path="/search">
-            <ViewPage />
-          </Route>
+          <Route path="/search" exact component={ViewPage} />
           <Route path="/book/:id" component={BookDetail} />
-          <Route path="/">
-            <Home />
-          </Route>
+          <Route path="/" component={Home} />
         </Switch>
         </div>
       </div>

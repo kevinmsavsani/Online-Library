@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+  }
+
+.row {  
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .side {
+    flex: 20%;
+    min-height: 1000px;
+    height: 100%;
+    background-color: #f1f1f1;
+    text-align: center;
+  }
+
+  .side img {
+    padding-top: 30px;
+    margin-top: 30px;
+    width: 150px;
+    height: 200px;
+  }
+  
+  .main {
+    flex: 80%;
+    background-color: white;
+    padding: 20px;
+  }
+
+  .main h1, h2{
+    text-align: center;
+  }
+
+  .side hr {
+      width:80%;
+  }
+
+  .bibliographic {
+      padding-left: 20px;
+      padding-right: 20px;
+      text-align: left;
+  }
