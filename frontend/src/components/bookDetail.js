@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import getData from '../services/apiWrapper';
 
 export default class BookDetail extends Component {
   constructor(props) {
@@ -13,11 +14,10 @@ export default class BookDetail extends Component {
   }
 
   componentDidMount() {
-    axios.get('https://www.googleapis.com/books/v1/volumes/' + this.props.match.params.id)
-      .then(response => {
-        console.log(response.data.volumeInfo)
-        this.setState({ title: response.data.volumeInfo.title ,
-                        author: response.data.volumeInfo.authors});
+    let Url = 'http://localhost:5000/bookDetail?id=' + this.props.match.params.id;
+    getData("GET",Url,{}).then(data => {
+        this.setState({ title: data.volumeInfo.title ,
+                        author: data.volumeInfo.authors});
       })
       .catch((error) => {
         console.log(error);

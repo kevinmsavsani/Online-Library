@@ -15,5 +15,10 @@ module.exports = {
 		let Url = 'https://www.googleapis.com/books/v1/volumes?q=';
 		Url += `inauthor:${req.query.names.split(',').join('+')}+intitle:${req.query.title}&maxResults=40`;
 		getData(Url).then((data) => res.send(data) , (err)=> console.log(err));
+	},
+	bookDetail: function(req, res) {
+		let Url = 'https://www.googleapis.com/books/v1/volumes/';
+		Url += `${req.query.id}`;
+		getData(Url).then((data) => res.send(data) , (err)=> console.log(err));
 	}
 };
