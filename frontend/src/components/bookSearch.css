@@ -1,9 +1,10 @@
 .form {
     margin-top: 20px;
     margin-bottom: 20px;
+    margin-left: 300px;
 }
 .form-section {
-    margin-left: 50px;
+    margin-left: 10px;
     display: inline-block;
     position: relative;
     width: 200px;
